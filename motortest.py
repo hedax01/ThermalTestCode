@@ -16,6 +16,7 @@ body=26
 trigger=27
 hand=16
 handTrig=23
+buzz=24
 
 GPIO.setup(EN,GPIO.OUT)
 GPIO.setup(PUL,GPIO.OUT)
@@ -28,6 +29,9 @@ GPIO.setup(body,GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 GPIO.setup(hand,GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(handTrig,GPIO.OUT)
+GPIO.setup(buzz,GPIO.OUT)
+GPIO.output(buzz,1)
+GPIO.output(handTrig,1)
 
 GPIO.output(EN,1)
 GPIO.output(PUL,0)
@@ -98,7 +102,12 @@ class DistanceSensor:
 class HandWasher:
     @staticmethod
     def On():
-        GPIO.output(handTrig,1)
-    def Off():
         GPIO.output(handTrig,0)
-    
+    def Off():
+        GPIO.output(handTrig,1)
+class Buzz:
+    @staticmethod
+    def On():
+        GPIO.output(buzz,0)
+    def Off():
+        GPIO.output(buzz,1)
