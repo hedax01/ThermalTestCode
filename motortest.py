@@ -23,17 +23,17 @@ GPIO.setup(PUL,GPIO.OUT)
 GPIO.setup(DIR,GPIO.OUT)
 
 GPIO.setup(trigger,GPIO.OUT)
-GPIO.output(trigger,1)
+GPIO.output(trigger,0)
 GPIO.setup(head,GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(body,GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 GPIO.setup(hand,GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(handTrig,GPIO.OUT)
 GPIO.setup(buzz,GPIO.OUT)
-GPIO.output(buzz,1)
-GPIO.output(handTrig,1)
+GPIO.output(buzz,0)
+GPIO.output(handTrig,0)
 
-GPIO.output(EN,1)
+GPIO.output(EN,0)
 GPIO.output(PUL,0)
 GPIO.output(DIR,0)
 
@@ -102,12 +102,12 @@ class DistanceSensor:
 class HandWasher:
     @staticmethod
     def On():
-        GPIO.output(handTrig,0)
-    def Off():
         GPIO.output(handTrig,1)
+    def Off():
+        GPIO.output(handTrig,0)
 class Buzz:
     @staticmethod
     def On():
-        GPIO.output(buzz,0)
-    def Off():
         GPIO.output(buzz,1)
+    def Off():
+        GPIO.output(buzz,0)
