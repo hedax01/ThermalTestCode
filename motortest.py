@@ -15,7 +15,7 @@ head=17
 body=26
 trigger=27
 hand=16
-handTrig=23
+handTrig=25
 buzz=24
 
 GPIO.setup(EN,GPIO.OUT)
