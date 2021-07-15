@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import serial
-ser=serial.Serial('/dev/ttyS0',9600, timeout=2)
+# ser=serial.Serial('/dev/ttyS0',9600, timeout=2)
+ser=serial.Serial('/dev/ttyUSB0',9600, timeout=2)
 
 from time import sleep
 from timing import delayMicroseconds
